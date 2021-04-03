@@ -1,0 +1,18 @@
+<?php
+include __DIR__ . '/header.phtml';
+include __DIR__ . '/contact-text.phtml';
+if (isset($error)) {
+    echo "<div class='alert alert-danger' role='alert'>ERROR!!! $error</div>";
+}
+?>
+
+<form action="" method="post">
+    <fieldset>
+        <input name="name" type="text" placeholder="Full Name" value="<?php if (isset($name)) echo htmlspecialchars($name); ?>">
+        <input name="email" type="email" placeholder="Email Address" value="<?php if (isset($email)) echo htmlspecialchars($email); ?>">
+        <textarea name="msg" placeholder="Your message..."><?php if (isset($msg)) echo htmlspecialchars($msg); ?></textarea>
+    </fieldset>
+    <input type="submit" class="button">
+</form>
+
+<?php include __DIR__ . '/footer.phtml';
